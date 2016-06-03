@@ -1,0 +1,35 @@
+cd("C:/Users/haupt_000/Desktop/Erlang Labs/ErlangLab6-Crawler").
+inets:start().
+
+cd("C:/Documents and Settings/ShkaburaVV/Рабочий стол/Erlang Labs/ErlangLab6-Crawler").
+cd("C:/Users/Vladislav/Desktop/Erlang Labs/ErlangLab6-Crawler").
+c(crawler).
+c(crawler_store).
+c(crawler_downloader).
+
+XXX = crawler:start_crawler("http://airwar.ru/", 100, 10).
+crawler:site_tree(XXX).
+
+ (airwar.ru /enc/la/a200.html) ../../lanow.html.
+
+
+werl -name@<ip-addr> <name> -setcookie <cookie>
+werl -sname server -setcookie class1 
+werl -sname client1 -setcookie class1 
+werl -sname client2 -setcookie class1 
+net_adm:ping('client1@max-pc'). 
+net_adm:ping('client2@max-pc'). 
+
+c(xo_server). 
+c(xo_room). 
+Server = xo_server:create_server(). 
+global:register_name(serv, Server). 
+
+
+c(xo_client). 
+Server = global:whereis_name(serv). 
+Me = xo_client:connect_to_game(Server). 
+
+
+xo_client:get_status(Me). 
+xo_client:turn(Me, {1,1}).

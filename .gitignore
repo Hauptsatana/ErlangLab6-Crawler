@@ -9,6 +9,9 @@ rel/example_project
 .concrete/DEV_MODE
 .rebar
 
+# Crawler downloads
+downloads/*
+
 # =========================
 # Operating System Files
 # =========================
